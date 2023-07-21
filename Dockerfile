@@ -1,4 +1,4 @@
-FROM ubuntu:focal-20220113 AS common
+FROM debian:bookworm AS common
 
 CMD ["/bin/bash"]
 
