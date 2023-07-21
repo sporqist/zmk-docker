@@ -576,6 +576,7 @@ jobs:
         run: sudo apt-get install -y skopeo
       - name: Login to GitHub Container Registry
         id: ghcr-login
+        if: ${{ env.ghcr-credentials == 'true' }}
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
@@ -583,12 +584,14 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
       - name: Login to Docker Hub
         id: docker-hub-login
+        if: ${{ env.docker-hub-credentials == 'true' }}
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
       - name: Login to Gitea
         id: docker-hub-login
+        if: ${{ env.gitea-credentials == 'true' }}
         uses: docker/login-action@v2
         with:
           registry: git.sporq.de
@@ -661,6 +664,7 @@ jobs:
         run: sudo apt-get install -y skopeo
       - name: Login to GitHub Container Registry
         id: ghcr-login
+        if: ${{ env.ghcr-credentials == 'true' }}
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
@@ -668,12 +672,14 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
       - name: Login to Docker Hub
         id: docker-hub-login
+        if: ${{ env.docker-hub-credentials == 'true' }}
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
       - name: Login to Gitea
         id: docker-hub-login
+        if: ${{ env.gitea-credentials == 'true' }}
         uses: docker/login-action@v2
         with:
           registry: git.sporq.de
