@@ -39,6 +39,11 @@ jobs:
     outputs:
       json: ${{ steps.import.outputs.json }}
     steps:
+      - name: Setup python
+        uses: actions/setup-python
+        with:
+          python-version: 3.11
+          cache: pip
       - name: Install yaml2json
         run: pip3 install remarshal
       - name: Checkout
