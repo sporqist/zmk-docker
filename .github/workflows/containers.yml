@@ -108,7 +108,7 @@ jobs:
           username: ${{ secrets.GHCR_USERNAME }}
           password: ${{ secrets.GHCR_TOKEN }}
       - name: Login to Gitea
-        id: docker-hub-login
+        id: gitea-login
         if: ${{ env.gitea-credentials == 'true' }}
         uses: docker/login-action@v2
         with:
@@ -222,7 +222,7 @@ jobs:
           username: ${{ secrets.GHCR_USERNAME }}
           password: ${{ secrets.GHCR_TOKEN }}
       - name: Login to Gitea
-        id: docker-hub-login
+        id: gitea-login
         if: ${{ env.gitea-credentials == 'true' }}
         uses: docker/login-action@v2
         with:
@@ -590,7 +590,7 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
       - name: Login to Gitea
-        id: docker-hub-login
+        id: gitea-login
         if: ${{ env.gitea-credentials == 'true' }}
         uses: docker/login-action@v2
         with:
@@ -678,7 +678,7 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
       - name: Login to Gitea
-        id: docker-hub-login
+        id: gitea-login
         if: ${{ env.gitea-credentials == 'true' }}
         uses: docker/login-action@v2
         with:
