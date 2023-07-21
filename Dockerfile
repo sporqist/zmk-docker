@@ -1,4 +1,4 @@
-FROM debian:bookworm AS common
+FROM debian:bookworm-slim AS common
 
 CMD ["/bin/bash"]
 
