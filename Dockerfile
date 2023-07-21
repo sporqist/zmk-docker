@@ -54,7 +54,7 @@ RUN \
   gpg \
   gpg-agent \
   less \
-  libpython-dev \
+  libpython3-dev \
   libsdl2-dev \
   locales \
   nano \
