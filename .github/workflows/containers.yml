@@ -40,7 +40,7 @@ jobs:
       json: ${{ steps.import.outputs.json }}
     steps:
       - name: Install yaml2json
-        run: python3 -m pip install remarshal
+        run: pip3 install remarshal
       - name: Checkout
         uses: actions/checkout@v3
       - name: Import from architectures.yml
