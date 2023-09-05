@@ -42,7 +42,7 @@ jobs:
       - name: Install yaml2json
         run: pip3 install remarshal
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Import from architectures.yml
         id: import
         run: echo "json=$(yaml2json architectures.yml | jq -c .)" >> $GITHUB_OUTPUT
@@ -348,7 +348,7 @@ jobs:
           cache-to: type=inline
           load: true
       - name: Checkout ZMK
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: ${{ env.zmk-repository }}
           ref: ${{ env.zmk-ref }}
@@ -621,7 +621,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Tag
         env:
           TAG: ${{ needs.tags.outputs.major-minor }}
@@ -703,7 +703,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ needs.stable-release-trigger.outputs.stable-tag }}
       - name: Tag
